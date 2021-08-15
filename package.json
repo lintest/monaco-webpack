@@ -1,0 +1,19 @@
+{
+	"name": "browser-esm-webpack",
+	"scripts": {
+		"build": "webpack --progress",
+		"test": "webpack serve --progress"
+	},
+	"devDependencies": {
+		"clean-webpack-plugin": "^4.0.0-alpha.0",
+		"css-loader": "^6.2.0",
+		"file-loader": "^6.2.0",
+		"html-webpack-plugin": "^5.3.2",
+		"monaco-editor": "^0.26.1",
+		"monaco-editor-webpack-plugin": "^4.1.1",
+		"style-loader": "^3.2.1",
+		"webpack": "^5.50.0",
+		"webpack-cli": "^4.7.2",
+		"webpack-dev-server": "^3.11.2"
+	}
+}
