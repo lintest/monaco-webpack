@@ -3,19 +3,24 @@ import * as monaco from 'monaco-editor';
 //@ts-ignore
 self.MonacoEnvironment = {
 	getWorkerUrl: function (moduleId, label) {
-		if (label === 'json') {
-			return './json.worker.bundle.js';
+		console.log("getWorkerUrl: ", moduleId, label)
+		switch (label) {
+			case 'json':
+				return './json.worker.bundle.js';
+			case 'css':
+			case 'scss':
+			case 'less':
+				return './css.worker.bundle.js';
+			case 'html':
+			case 'handlebars':
+			case 'razor':
+				return './html.worker.bundle.js';
+			case 'typescript':
+			case 'javascript':
+				return './ts.worker.bundle.js';
+			default:
+				return './editor.worker.bundle.js';
 		}
-		if (label === 'css' || label === 'scss' || label === 'less') {
-			return './css.worker.bundle.js';
-		}
-		if (label === 'html' || label === 'handlebars' || label === 'razor') {
-			return './html.worker.bundle.js';
-		}
-		if (label === 'typescript' || label === 'javascript') {
-			return './ts.worker.bundle.js';
-		}
-		return './editor.worker.bundle.js';
 	}
 };
 
